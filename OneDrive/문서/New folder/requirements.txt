@@ -1,0 +1,8 @@
+pandas
+numpy
+faker
+scikit-learn
+sentence-transformers
+streamlit
+matplotlib
+joblib

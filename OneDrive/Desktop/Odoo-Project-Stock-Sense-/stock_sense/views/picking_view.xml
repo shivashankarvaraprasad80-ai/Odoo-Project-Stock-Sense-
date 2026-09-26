@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Pickings / Transfers -->
+    <record id="view_stock_sense_picking_tree" model="ir.ui.view">
+        <field name="name">stock_sense.picking.tree</field>
+        <field name="model">stock_sense.picking</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="picking_type"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_stock_sense_picking_form" model="ir.ui.view">
+        <field name="name">stock_sense.picking.form</field>
+        <field name="model">stock_sense.picking</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" string="Mark as Ready" type="object" invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_validate" string="Validate" type="object" invisible="state != 'ready'" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,ready,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="picking_type"/>
+                        </group>
+                        <group>
+                            <field name="location_id"/>
+                            <field name="location_dest_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Operations">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_sense_picking_receipts" model="ir.actions.act_window">
+        <field name="name">Receipts</field>
+        <field name="res_model">stock_sense.picking</field>
+        <field name="domain">[('picking_type', '=', 'incoming')]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="action_stock_sense_picking_deliveries" model="ir.actions.act_window">
+        <field name="name">Delivery Orders</field>
+        <field name="res_model">stock_sense.picking</field>
+        <field name="domain">[('picking_type', '=', 'outgoing')]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_picking_receipts" name="Receipts" parent="menu_stock_sense_operations" action="action_stock_sense_picking_receipts" sequence="1"/>
+    <menuitem id="menu_picking_deliveries" name="Delivery Orders" parent="menu_stock_sense_operations" action="action_stock_sense_picking_deliveries" sequence="2"/>
+</odoo>

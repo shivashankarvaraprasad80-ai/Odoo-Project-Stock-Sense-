@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem id="menu_stock_sense_root" name="StockSense" sequence="10" web_icon="stock_sense,static/description/icon.png"/>
+
+    <!-- App Sub Menus -->
+    <menuitem id="menu_stock_sense_dashboard" name="Dashboard" parent="menu_stock_sense_root" sequence="1"/>
+    <menuitem id="menu_stock_sense_operations" name="Operations" parent="menu_stock_sense_root" sequence="2"/>
+    <menuitem id="menu_stock_sense_products" name="Products" parent="menu_stock_sense_root" sequence="3"/>
+    <menuitem id="menu_stock_sense_config" name="Configuration" parent="menu_stock_sense_root" sequence="100"/>
+</odoo>

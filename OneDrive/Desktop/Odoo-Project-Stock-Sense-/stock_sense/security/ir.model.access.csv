@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_sense_warehouse,access_stock_sense_warehouse,model_stock_sense_warehouse,,1,1,1,1
+access_stock_sense_location,access_stock_sense_location,model_stock_sense_location,,1,1,1,1
+access_stock_sense_product,access_stock_sense_product,model_stock_sense_product,,1,1,1,1
+access_stock_sense_product_category,access_stock_sense_product_category,model_stock_sense_product_category,,1,1,1,1
+access_stock_sense_partner,access_stock_sense_partner,model_stock_sense_partner,,1,1,1,1
+access_stock_sense_picking,access_stock_sense_picking,model_stock_sense_picking,,1,1,1,1
+access_stock_sense_picking_line,access_stock_sense_picking_line,model_stock_sense_picking_line,,1,1,1,1
+access_stock_sense_adjustment,access_stock_sense_adjustment,model_stock_sense_adjustment,,1,1,1,1
+access_stock_sense_adjustment_line,access_stock_sense_adjustment_line,model_stock_sense_adjustment_line,,1,1,1,1
+access_stock_sense_move,access_stock_sense_move,model_stock_sense_move,,1,1,1,1

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_sense_product_tree" model="ir.ui.view">
+        <field name="name">stock_sense.product.tree</field>
+        <field name="model">stock_sense.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sku"/>
+                <field name="category_id"/>
+                <field name="qty_available"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_stock_sense_product_form" model="ir.ui.view">
+        <field name="name">stock_sense.product.form</field>
+        <field name="model">stock_sense.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sku"/>
+                            <field name="category_id"/>
+                        </group>
+                        <group>
+                            <field name="uom_id"/>
+                            <field name="reordering_min_qty"/>
+                            <field name="qty_available"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_sense_product" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">stock_sense.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_product_list" name="Products" parent="menu_stock_sense_products" action="action_stock_sense_product" sequence="1"/>
+</odoo>

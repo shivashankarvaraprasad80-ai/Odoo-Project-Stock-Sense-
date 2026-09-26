@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_stock_sense_staff" model="res.groups">
+            <field name="name">StockSense / Warehouse Staff</field>
+        </record>
+        
+        <record id="group_stock_sense_manager" model="res.groups">
+            <field name="name">StockSense / Inventory Manager</field>
+            <field name="implied_ids" eval="[(4, ref('group_stock_sense_staff'))]"/>
+        </record>
+    </data>
+</odoo>

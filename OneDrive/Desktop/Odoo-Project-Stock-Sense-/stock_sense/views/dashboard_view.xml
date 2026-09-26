@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_stock_sense_dashboard" model="ir.actions.act_window">
+        <field name="name">Inventory Dashboard</field>
+        <field name="res_model">stock_sense.move</field>
+        <field name="view_mode">graph,pivot,tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Welcome to StockSense Dashboard
+            </p>
+            <p>
+                Track your inventory movements and view KPI analytics here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_dashboard_main" name="Analytics" parent="menu_stock_sense_dashboard" action="action_stock_sense_dashboard" sequence="1"/>
+</odoo>
